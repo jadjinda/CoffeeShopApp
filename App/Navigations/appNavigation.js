@@ -8,7 +8,8 @@ import React from "react";
 import {Ionicons, Entypo, AntDesign} from "@expo/vector-icons";
 import WelcomeScreen from "../Screens/WelcomeScreen";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-
+import { BlurView } from 'expo-blur';
+import {StyleSheet} from "react-native"
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ const Stack = createNativeStackNavigator();
 function HomeNavigation(){
     return(
         <Tab.Navigator
+            initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: '#b9814e',
@@ -23,9 +25,22 @@ function HomeNavigation(){
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     height: 70,
-                    borderTopLeftRadius: 30,
-                    borderTopRightRadius: 30
-                }
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 30,
+                    position: 'absolute'
+                },
+                tabBarBackground: () =>(
+                    <BlurView
+                        intensity={80}
+                        style={{
+                            ...StyleSheet.absoluteFillObject,
+                            borderTopLeftRadius: 20,
+                            borderTopRightRadius: 20,
+                            overflow: 'hidden',
+                            backgroundColor: 'transparent'
+                        }}
+                    />
+                ),
             }}
         >
             <Tab.Screen name="Home" component={HomeScreen}
@@ -57,11 +72,11 @@ function AppNavigation(props){
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName='Welcome'>
-                <Stack.Screen name="Home" options={{headerShown: false}} component={HomeNavigation}/>
-                <Stack.Screen name="Welcome" options={{headerShown: false}} component={WelcomeScreen}/>
-                <Stack.Screen name="Fav" options={{headerShown: false}} component={FavScreen}/>
-                <Stack.Screen name="Order" options={{headerShown: false}} component={OrderScreen}/>
-                <Stack.Screen name="Notif" options={{headerShown: false}} component={NotifScreen}/>
+                <Stack.Screen name="HomeScreen" options={{headerShown: false}} component={HomeNavigation} />
+                <Stack.Screen name="Welcome" options={{headerShown: false}} component={WelcomeScreen} />
+                <Stack.Screen name="Fav" options={{headerShown: false}} component={FavScreen} />
+                <Stack.Screen name="Order" options={{headerShown: false}} component={OrderScreen} />
+                <Stack.Screen name="Notif" options={{headerShown: false}} component={NotifScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

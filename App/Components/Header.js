@@ -5,7 +5,6 @@ import {Entypo, Feather} from "@expo/vector-icons";
 export default function Header(){
     return(
         <View style={styles.container}>
-            <StatusBar/>
             <View style={styles.mainContainer}>
                 <View style={styles.header}>
                     <View style={styles.headerContent}>
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     headerContent:{
-        marginTop: 140,
+        marginTop: 120,
         display: 'flex',
         flexDirection: 'row',
         justifyContent:'space-evenly',

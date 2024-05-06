@@ -18,7 +18,7 @@ export default function WelcomeScreen({navigation}){
                         powerful flavor</Text>
                 </View>
                 <TouchableOpacity style={styles.btn}
-                                  onPress={()=>navigation.navigate('Home')}>
+                                  onPress={()=>navigation.navigate('HomeScreen')}>
                     <Text style={{color: 'white', marginTop:15, fontWeight: 'bold'}}>
                         Get Started
                     </Text>
