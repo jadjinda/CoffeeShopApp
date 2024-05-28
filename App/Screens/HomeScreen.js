@@ -1,13 +1,14 @@
 import React from "react";
-import {StatusBar, Text, View, StyleSheet} from "react-native";
+import {StatusBar, View, StyleSheet} from "react-native";
 import Header from "../Components/Header";
-import {useBottomTabBarHeight} from "@react-navigation/bottom-tabs";
+import Body from "../Components/Body";
+
 export default function HomeScreen(){
-    const bottomTabBarHeight = useBottomTabBarHeight();
     return (
         <View style={styles.container}>
             <StatusBar/>
             <Header/>
+            <Body/>
         </View>
     );
 }

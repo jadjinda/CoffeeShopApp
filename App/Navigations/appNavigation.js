@@ -20,25 +20,15 @@ function HomeNavigation(){
             initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
+                tabBarShowLabel: false,
                 tabBarActiveTintColor: '#b9814e',
                 tabBarInactiveTintColor: 'grey',
-                tabBarShowLabel: false,
-                tabBarStyle: {
-                    height: 70,
-                    borderTopLeftRadius: 20,
-                    borderTopRightRadius: 30,
-                    position: 'absolute'
-                },
+                tabBarStyle: styles.tabBarStyle,
                 tabBarBackground: () =>(
                     <BlurView
-                        intensity={80}
-                        style={{
-                            ...StyleSheet.absoluteFillObject,
-                            borderTopLeftRadius: 20,
-                            borderTopRightRadius: 20,
-                            overflow: 'hidden',
-                            backgroundColor: 'transparent'
-                        }}
+                        overlayColor=""
+                        blurAmount={80}
+                        style={styles.BlurViewStyles}
                     />
                 ),
             }}
@@ -83,3 +73,23 @@ function AppNavigation(props){
 }
 
 export default AppNavigation;
+
+const styles = StyleSheet.create({
+    tabBarStyle:{
+        height: 80,
+        position: 'absolute',
+        backgroundColor: 'rgba(196,196,196,0.4)',
+        borderTopWidth: 0,
+        elevation: 0,
+        borderTopColor: 'transparent',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20
+    },
+    BlurViewStyles: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
+})
