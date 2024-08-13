@@ -25,8 +25,8 @@ export default function Header(){
             <View style={styles.mainContainer}>
                 <View style={styles.header}>
                     <View style={styles.headerContent}>
-                        <Text style={{color:'white',marginTop: -150, left: -60, opacity:0.6, fontFamily: "Sora-Thin"}}>Location</Text>
-                        <Text style={{color:'white', left: -60, marginTop: -90, fontFamily: "Sora-Light"}}>Lomé, TOGO
+                        <Text style={{color:'white',marginTop: -150, left: -45, opacity:0.6, fontFamily: "Sora-Thin"}}>Location</Text>
+                        <Text style={{color:'white', left: -115, marginTop: -90, fontFamily: "Sora-Light"}}>Lomé, TOGO
                             <Entypo name="chevron-small-down" size={15} color="white" /></Text>
                         <Image source={require('../../assets/avatar.png')} style={styles.profile}/>
                     </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 10,
         marginTop: -120,
-        right: -40
+        right: 0
     },
     searchBar:{
         left: 55,

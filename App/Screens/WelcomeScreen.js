@@ -1,6 +1,7 @@
 import React from "react";
 import {SafeAreaView, StatusBar, StyleSheet, Image, TouchableOpacity, View, Text} from "react-native";
 import {useFonts} from "expo-font";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default function WelcomeScreen({navigation}){
     const [fontLoaded] = useFonts({
@@ -46,20 +47,20 @@ export default function WelcomeScreen({navigation}){
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#000',
-        width: 500,
-        height: 900,
+        width: wp(500),
+        height: hp(900),
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo:{
         marginTop: -10,
-        width:350,
-        height: 500,
+        width: wp(100),
+        height: hp(70),
         justifyContent: 'center',
     },
     startText:{
         color: 'white',
-        fontSize: 30,
+        fontSize: hp(3),
         justifyContent: "center",
         fontFamily: "Sora-Bold",
         textAlign:'center'
@@ -72,8 +73,8 @@ const styles = StyleSheet.create({
     },
     btn:{
         backgroundColor: '#b9814e',
-        width: 300,
-        height: 60,
+        width: wp(70),
+        height: hp(8),
         borderRadius: 15,
         marginTop: 20,
         alignItems: "center"
