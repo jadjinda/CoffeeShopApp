@@ -123,7 +123,7 @@ export default function Body(){
                         <FlatList
                             data={CardData}
                             numColumns={2}
-                            vertical={true}
+                            horizontal={false}
                             showsVerticalScrollIndicator={false}
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({item}) =>{
