@@ -76,7 +76,7 @@ export default AppNavigation;
 
 const styles = StyleSheet.create({
     tabBarStyle:{
-        height: 80,
+        height: 70,
         position: 'absolute',
         backgroundColor: 'rgba(196,196,196,0.4)',
         borderTopWidth: 0,
