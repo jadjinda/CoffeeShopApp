@@ -110,22 +110,22 @@ export default function Body(){
         <View style={styles.container}>
             <View style={styles.mainContainer}>
                 <View style={styles.body}>
-                    <FlatList
-                        data={DATA}
-                        renderItem={renderItem}
-                        keyExtractor={item => item.id}
-                        extraData={selectedId}
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                    />
+                    <View style={{marginTop: 30}}>
+                        <FlatList
+                            data={DATA}
+                            renderItem={renderItem}
+                            keyExtractor={item => item.id}
+                            extraData={selectedId}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                        />
+                    </View>
 
-                    <View style={{flex: 1, flexWrap: 'wrap', flexDirection: 'row'}}>
+                    <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'space-between'}}>
                         <FlatList
                             data={CardData}
                             numColumns={2}
-                            horizontal={false}
                             showsVerticalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
                             renderItem={({item}) =>{
                                 return(
                                     <View style={{backgroundColor: "#FFFFFF", marginTop: 25, left: 0 ,width: 160, height: 260, borderRadius: 15, marginLeft: 10}}>
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     },
     mainContainer:{},
     body:{
-        top: -20,
+        top: -60,
         left: 10,
     },
     item: {
