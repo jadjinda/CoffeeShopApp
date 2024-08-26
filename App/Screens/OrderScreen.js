@@ -1,8 +1,9 @@
 import React from "react";
-import {Image, SafeAreaView, StatusBar, Text, TouchableOpacity, View} from "react-native";
+import {Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import {useFonts} from "expo-font";
-import {AntDesign, Entypo, Feather, SimpleLineIcons} from "@expo/vector-icons";
+import {AntDesign, Entypo, Feather, Ionicons, MaterialIcons, SimpleLineIcons} from "@expo/vector-icons";
 import { Divider} from 'react-native-paper';
+import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 
 export default function OrderScreen(){
     const [fontLoaded] = useFonts({
@@ -21,7 +22,7 @@ export default function OrderScreen(){
         return undefined;
     }
     return (
-        <SafeAreaView style={{ flex: 1,alignItems: 'center'}}>
+        <ScrollView contentContainerStyle={{alignItems: 'center' }}>
             <StatusBar/>
             <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 10}}>
                 <Entypo style={{marginLeft: -120}} name="chevron-left" size={24} color="black" />
@@ -75,7 +76,53 @@ export default function OrderScreen(){
                     </View>
                 </View>
             </View>
-            <Divider style={{width: 400, marginTop: 35, height: 10}} />
-        </SafeAreaView>
+            <Divider style={{width: 400, marginTop: 35, height: 3}} />
+            <View>
+                <View style={{marginTop: 20, alignItems: "center"}}>
+                    <TouchableOpacity style={{borderColor: "#d5d5d5", borderWidth: 1, borderRadius: 10, width: 300, height: 50}}>
+                        <MaterialIcons name="discount" style={{left: 15, top: 15}} size={20} color="#b9814e" />
+                        <Text style={{left: 50, top: -10, fontFamily: "Sora-Medium", fontSize: 13}}>1 Discount is applied</Text>
+                        <Entypo name="chevron-right" style={{marginTop: -33, left: 250}} size={20} color="black" />
+                    </TouchableOpacity>
+                </View>
+                <View style={{marginTop: 20}}>
+                    <Text style={{fontFamily: "Sora-Medium", fontSize: 13}}>Payement Summary</Text>
+                    <View>
+                        <Text style={{fontFamily: "Sora-Light", marginTop: 15}}>Price</Text>
+                        <Text style={{fontFamily: "Sora-Medium", top: -24, left: 250}}>$4.53</Text>
+                    </View>
+                    <View style={{top: -20}}>
+                        <Text style={{fontFamily: "Sora-Light"}}>Delivery Fee</Text>
+                        <View style={{top: -30, flexDirection: 'row', left: 250}}>
+                            <Text style={{textDecorationLine: 'line-through', fontFamily: "Sora-Light", left: -30}}>$2.0</Text>
+                            <Text style={{fontFamily: "Sora-Medium", left: -25}}>$1.0</Text>
+                        </View>
+                    </View>
+                    <View style={{top: -40}}>
+                        <Text style={{fontFamily: "Sora-Light"}}>Total Payment</Text>
+                        <Text style={{fontFamily: "Sora-Medium", top: -25, left: 250}}>$5.53</Text>
+                    </View>
+                </View>
+                <View style={{top: -50, flexDirection: "row"}}>
+                    <Ionicons name="cash" size={24} color="#b9814e" />
+                    <View style={{flexDirection: "row",backgroundColor:"#d5d5d5", borderRadius: 15, width: 120, height: 25, left: 10}}>
+                        <TouchableOpacity style={{backgroundColor: "#b9814e", borderRadius: 15, width: 60}}>
+                            <Text style={{color: "white", left: 7, fontFamily: "Sora-Light", fontSize: 13}}>Cash</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Text style={{left: 4, fontFamily: "Sora-Light", fontSize: 13}}>$ 5.53</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{backgroundColor: "#d5d5d5", left: 110, width: 35, borderRadius: 20, height: 35}}>
+                        <Ionicons name="ellipsis-horizontal-outline" size={24} color="white" style={{top: 5, left: 5}}/>
+                    </View>
+                </View>
+            </View>
+            <View style={{top: -30}}>
+                <TouchableOpacity style={{backgroundColor: "#b9814e", width: 270, height: 60, borderRadius: 15, alignItems: "center"}}>
+                    <Text style={{color: "white", top: 15, fontFamily: "Sora-Medium"}}>Order</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     );
 }
