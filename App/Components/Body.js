@@ -3,6 +3,7 @@ import {Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, TextInput, To
 import {useFonts} from "expo-font";
 import {AntDesign, Entypo} from "@expo/vector-icons";
 import {BlurView} from "expo-blur";
+import {useNavigation} from "@react-navigation/native";
 const { width, height } = Dimensions.get('screen');
 
 const DATA = [
@@ -75,6 +76,7 @@ const product = ({content}) => (
 );
 
 export default function Body(){
+    const navigation = useNavigation();
     const [fontLoaded] = useFonts({
         'Sora-Bold' : require('/home/user/Code/CoffeeShopApp/assets/fonts/Sora-Bold.ttf'),
         'Sora-ExtraBold' : require('/home/user/Code/CoffeeShopApp/assets/fonts/Sora-ExtraBold.ttf'),
@@ -139,7 +141,9 @@ export default function Body(){
                                             <Text style={{fontFamily: "Sora-Light", color:"black", fontSize: 13}}>{item.description}</Text>
                                             <Text style={{fontFamily: "Sora-Bold", color: "black", marginTop: 20}}>{item.price}</Text>
                                         </View>
-                                        <TouchableOpacity style={{backgroundColor: "#b9814e", width: 50, height:50, left: 90, marginTop: -40, borderRadius: 15}}>
+                                        <TouchableOpacity
+                                            onPress={()=> navigation.navigate('Detail')}
+                                            style={{backgroundColor: "#b9814e", width: 50, height:50, left: 90, marginTop: -40, borderRadius: 15}}>
                                             <Entypo name="plus" size={50} color="white" />
                                         </TouchableOpacity>
                                     </View>

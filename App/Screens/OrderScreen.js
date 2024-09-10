@@ -1,9 +1,17 @@
-import React from "react";
-import {Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
+import React, {useRef} from "react";
+import {Image,ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import {useFonts} from "expo-font";
 import {AntDesign, Entypo, Feather, Ionicons, MaterialIcons, SimpleLineIcons} from "@expo/vector-icons";
 import { Divider} from 'react-native-paper';
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
+
+function handleInfinityScroll(event){
+    let mHeight = event.nativeEvent.layoutMeasurement.height;
+    let cSize = event.nativeEvent.contentSize.height;
+    let y = event.nativeEvent.contentOffset.y;
+    if(Math.ceil(mHeight + y )>= cSize)return true;
+    return false;
+}
 
 export default function OrderScreen(){
     const [fontLoaded] = useFonts({
@@ -22,7 +30,9 @@ export default function OrderScreen(){
         return undefined;
     }
     return (
-        <ScrollView contentContainerStyle={{alignItems: 'center' }}>
+        <ScrollView
+            contentContainerStyle={{alignItems: 'center' }}
+        >
             <StatusBar/>
             <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 10}}>
                 <Entypo style={{marginLeft: -120}} name="chevron-left" size={24} color="black" />
