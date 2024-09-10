@@ -10,12 +10,16 @@ export default function DetailScreen(){
         >
             <StatusBar/>
             <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 10}}>
-                <Entypo style={{flex: 1}} name="chevron-left" size={24} color="black" />
-                <Text style={{fontFamily: "Sora-Medium", fontSize: 20, flex: 2}}>Detail</Text>
-                <AntDesign name="hearto" size={24} color="black" style={{flex: -1}}/>
+                <TouchableOpacity style={{flex: 1, left: 30, top: 8}}>
+                    <Entypo name="chevron-left" size={24} color="black" />
+                </TouchableOpacity>
+                <Text style={{fontFamily: "Sora-Medium", fontSize: 20, flex: 2, left: 30}}>Detail</Text>
+                <TouchableOpacity style={{top: 8}}>
+                    <AntDesign name="hearto" size={24} color="black" style={{left: -30}}/>
+                </TouchableOpacity>
             </View>
 
-            <View style={{marginTop: 50, alignItems: 'center'}}>
+            <View style={{marginTop: 50, alignItems: 'center', height: 700}}>
                 <Image source={require('../../assets/item.png')}/>
                 <View style={{marginTop: 10}}>
                     <Text style={{fontFamily: "Sora-Medium", left: -110}}>Cappucino</Text>
@@ -45,11 +49,22 @@ export default function DetailScreen(){
                         <TouchableOpacity style={{borderColor: "#d5d5d5", borderWidth: 1, borderRadius: 10, width: 90, height: 40, alignItems: "center", left: -20}}>
                             <Text style={{fontFamily: "Sora-Medium", top: 5}}>S</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{borderColor: "#d5d5d5", borderWidth: 1, borderRadius: 10, width: 90, height: 40, alignItems: "center", left: 0}}>
-                            <Text style={{fontFamily: "Sora-Medium", top: 5}}>M</Text>
+                        <TouchableOpacity style={{borderColor: "#b9814e", borderWidth: 1, borderRadius: 10, width: 90, height: 40, alignItems: "center", left: 0}}>
+                            <Text style={{fontFamily: "Sora-Medium", top: 5, color: "#b9814e"}}>M</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={{borderColor: "#d5d5d5", borderWidth: 1, borderRadius: 10, width: 90, height: 40, alignItems: "center", left: 20}}>
                             <Text style={{fontFamily: "Sora-Medium", top: 5}}>L</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={{flexDirection: "row", top: 100}}>
+                    <View style={{left: -30}}>
+                        <Text style={{color: '#bebcba', fontFamily: 'Sora-Medium'}}>Price</Text>
+                        <Text style={{color: "#b9814e", fontFamily: "Sora-Medium", fontSize: 16}}>$4.53</Text>
+                    </View>
+                    <View style={{left: 30}}>
+                        <TouchableOpacity style={{alignItems: 'center', backgroundColor: "#b9814e", width: 200, height: 50, borderRadius: 10}}>
+                            <Text style={{color: "#ffffff", fontFamily: "Sora-Medium", top: 7}}>Buy Now</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

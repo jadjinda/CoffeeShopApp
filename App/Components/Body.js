@@ -123,7 +123,7 @@ export default function Body(){
                         />
                     </View>
 
-                    <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'space-between',height: 300}}>
                         <FlatList
                             data={CardData}
                             numColumns={2}
