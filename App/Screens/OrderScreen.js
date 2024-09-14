@@ -3,15 +3,6 @@ import {Image,ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-n
 import {useFonts} from "expo-font";
 import {AntDesign, Entypo, Feather, Ionicons, MaterialIcons, SimpleLineIcons} from "@expo/vector-icons";
 import { Divider} from 'react-native-paper';
-import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
-
-function handleInfinityScroll(event){
-    let mHeight = event.nativeEvent.layoutMeasurement.height;
-    let cSize = event.nativeEvent.contentSize.height;
-    let y = event.nativeEvent.contentOffset.y;
-    if(Math.ceil(mHeight + y )>= cSize)return true;
-    return false;
-}
 
 export default function OrderScreen(){
     const [fontLoaded] = useFonts({
@@ -31,11 +22,13 @@ export default function OrderScreen(){
     }
     return (
         <ScrollView
-            contentContainerStyle={{alignItems: 'center' }}
+            contentContainerStyle={{alignItems: 'center', height: 850 }}
         >
             <StatusBar/>
             <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 10}}>
-                <Entypo style={{marginLeft: -120}} name="chevron-left" size={24} color="black" />
+                <TouchableOpacity style={{marginLeft: -120, top: 7}}>
+                    <Entypo name="chevron-left" size={24} color="black" />
+                </TouchableOpacity>
                 <Text style={{marginLeft: 110, fontFamily: "Sora-Medium", fontSize: 20}}>Order</Text>
             </View>
 

@@ -159,7 +159,7 @@ export default function Body(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#F6F7EE"
+        backgroundColor: "#F6F7EE",
     },
     mainContainer:{},
     body:{

@@ -11,6 +11,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import { BlurView } from 'expo-blur';
 import {StyleSheet} from "react-native"
 import DetailScreen from "../Screens/DetailScreen";
+import BagScreen from "../Screens/BagScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -69,6 +70,7 @@ function AppNavigation(props){
                 <Stack.Screen name="Order" options={{headerShown: false}} component={OrderScreen} />
                 <Stack.Screen name="Notif" options={{headerShown: false}} component={NotifScreen} />
                 <Stack.Screen name="Detail" options={{headerShown: false}} component={DetailScreen}/>
+                <Stack.Screen name="Bag" component={BagScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
