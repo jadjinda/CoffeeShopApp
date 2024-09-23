@@ -9,7 +9,7 @@ import {Ionicons, Entypo, AntDesign} from "@expo/vector-icons";
 import WelcomeScreen from "../Screens/WelcomeScreen";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import { BlurView } from 'expo-blur';
-import {StyleSheet} from "react-native"
+import {StyleSheet, View} from "react-native"
 import DetailScreen from "../Screens/DetailScreen";
 import BagScreen from "../Screens/BagScreen";
 
@@ -38,22 +38,88 @@ function HomeNavigation(){
             <Tab.Screen name="Home" component={HomeScreen}
                         options={{
                             tabBarIcon: ({focused, color}) => (
-                                <Entypo name="home" size={24} color={focused? "#b9814e": "grey"} />
+                                <View style={{
+                                    alignItems: 'center'
+                                }}>
+                                    <Entypo name="home" size={24} color={focused? "#b9814e": "grey"} />
+
+                                    {focused ? (
+                                        <View
+                                            style={{
+                                                backgroundColor: '#b9814e',
+                                                width: 8,
+                                                height: 8,
+                                                borderRadius: 5,
+                                                position: 'absolute',
+                                                bottom: -10
+                                            }}
+                                        />
+                                    ) : null}
+
+                                </View>
                             ),
                         }}/>
             <Tab.Screen name="Fav" component={FavScreen} options={{
                 tabBarIcon: ({focused, color}) => (
-                    <AntDesign name="heart" size={24} color={focused? "#b9814e": "grey"}/>
+                    <View style={{
+                        alignItems: 'center'
+                    }}>
+                        <AntDesign name="heart" size={24} color={focused? "#b9814e": "grey"}/>
+                        {focused ? (
+                            <View
+                                style={{
+                                    backgroundColor: '#b9814e',
+                                    width: 8,
+                                    height: 8,
+                                    borderRadius: 5,
+                                    position: 'absolute',
+                                    bottom: -10
+                                }}
+                            />
+                        ) : null}
+                    </View>
                 ),
             }}/>
             <Tab.Screen name="Order" component={OrderScreen} options={{
                 tabBarIcon: ({focused, color}) => (
-                    <Ionicons name="bag" size={24} color={focused? "#b9814e": "grey"}/>
+                    <View style={{
+                        alignItems: 'center'
+                    }}>
+                        <Ionicons name="bag" size={24} color={focused? "#b9814e": "grey"}/>
+                        {focused ? (
+                            <View
+                                style={{
+                                    backgroundColor: '#b9814e',
+                                    width: 8,
+                                    height: 8,
+                                    borderRadius: 5,
+                                    position: 'absolute',
+                                    bottom: -10
+                                }}
+                            />
+                        ) : null}
+                    </View>
                 ),
             }}/>
             <Tab.Screen name="Notif" component={NotifScreen} options={{
                 tabBarIcon: ({focused, color}) => (
-                    <Ionicons name="notifications" size={24} color={focused? "#b9814e": "grey"}/>
+                    <View style={{
+                        alignItems: 'center'
+                    }}>
+                        <Ionicons name="notifications" size={24} color={focused? "#b9814e": "grey"}/>
+                        {focused ? (
+                            <View
+                                style={{
+                                    backgroundColor: '#b9814e',
+                                    width: 8,
+                                    height: 8,
+                                    borderRadius: 5,
+                                    position: 'absolute',
+                                    bottom: -10
+                                }}
+                            />
+                        ) : null}
+                    </View>
                 ),
             }}/>
         </Tab.Navigator>
@@ -81,13 +147,15 @@ export default AppNavigation;
 const styles = StyleSheet.create({
     tabBarStyle:{
         height: 70,
-        position: 'absolute',
+
         backgroundColor: 'rgba(196,196,196,0.4)',
         borderTopWidth: 0,
         elevation: 0,
         borderTopColor: 'transparent',
         borderTopLeftRadius: 20,
-        borderTopRightRadius: 20
+        borderTopRightRadius: 20,
+        paddingTop: 0,
+        marginTop: -40,
     },
     BlurViewStyles: {
         position: 'absolute',

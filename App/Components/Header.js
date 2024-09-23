@@ -3,6 +3,7 @@ import {Image, ScrollView, StyleSheet, Text, TextInput, View} from "react-native
 import {AntDesign, Entypo, Feather} from "@expo/vector-icons";
 import {useFonts} from "expo-font";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {size} from "../constant/size";
 
 export default function Header(){
     const [fontLoaded] = useFonts({
@@ -64,36 +65,36 @@ const styles = StyleSheet.create({
     },
     mainContainer:{},
     header: {
-        width: wp(100),
-        height: hp(37),
+        width: size.width,
+        height: size.height/2.7,
         backgroundColor:'#1f1f1f',
         alignItems: 'center',
         position: 'relative'
     },
     headerContent:{
-        marginTop: 120,
+        marginTop: size.height-670,
         display: 'flex',
         flexDirection: 'row',
         justifyContent:'space-evenly',
         alignItems:'center'
     },
     subHearderContent:{
-        top: -30,
-        width: 450,
-        height: 100,
+        top: size.height-810,
+        width: size.width+90,
+        height: size.height-50,
         display: 'flex',
         alignItems:'center'
     },
     profile:{
-        width: wp(15),
-        height: hp(6),
+        width: size.width-310,
+        height: size.height-730,
         borderRadius: 10,
-        marginTop: -120,
+        marginTop: size.height-900,
         right: hp(-3)
     },
     searchBar:{
         left: hp(9.5),
-        top: hp(3),
+        top: size.height-760,
         borderWidth: 0,
         backgroundColor: '#313132',
         padding: 5,

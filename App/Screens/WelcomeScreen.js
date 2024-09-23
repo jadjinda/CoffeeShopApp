@@ -2,6 +2,7 @@ import React from "react";
 import {SafeAreaView, StatusBar, StyleSheet, Image, TouchableOpacity, View, Text} from "react-native";
 import {useFonts} from "expo-font";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {size} from "../constant/size";
 
 export default function WelcomeScreen({navigation}){
     const [fontLoaded] = useFonts({
@@ -47,15 +48,14 @@ export default function WelcomeScreen({navigation}){
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#000',
-        width: wp(500),
-        height: hp(900),
+        width: size.width,
+        height: size.height,
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo:{
-        marginTop: -10,
-        width: wp(100),
-        height: hp(70),
+        width: size.width,
+        height: size.height-250,
         justifyContent: 'center',
     },
     startText:{
